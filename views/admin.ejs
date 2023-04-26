@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include("seri")%>
+</head>
+<body>
+    <a href="/admin/add">ekle</a>
+   
+    <% blogs.forEach((b) => {%>
+        <h2><%=b.name%></h2>
+        <a class="del" data-doc="<%=b._id%>">sil</a>
+        <h2>===================</h2>
+    <% }) %>
+
+
+    <script>
+        const del = document.querySelectorAll("a.del");
+        
+        del.forEach(d => {
+            d.addEventListener("click", (e) => {
+            var url = `admin/delet/${d.dataset.doc}`;
+
+            fetch(url, {
+                method: "DELETE"
+            })
+            .then((Response) => Response.json())
+            .then((data) => window.location.href = data.link)
+            .catch((err) => console.log(err))
+            })
+        })
+
+        
+    </script>
+</body>
+</html>

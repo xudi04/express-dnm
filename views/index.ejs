@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include("seri")%>
+</head>
+<body>
+   
+    <% blogs.forEach((b) => {%>
+        <h1><a href="blog/<%=b._id%>"><%=b.name%></a></h1>
+        <h2><%=b.sname%></h2>
+        <h2>===================</h2>
+    <% }) %>
+
+</body>
+</html>
