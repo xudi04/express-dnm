@@ -12,7 +12,7 @@ const dbURL = "mongodb+srv://musti1:musti123@aqil.hq9pwf5.mongodb.net/test";
 mongoose.connect(dbURL)
   .then((res) =>{
       console.log("bağlandi")
-      app.listen(process.env.PORT,3000, () => {
+      app.listen(process.env.PORT || 3000, () => {
         console.log("http://localhost:3000");
         console.log("strated...");
       });
