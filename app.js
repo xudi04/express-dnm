@@ -29,7 +29,7 @@ app.use("/blog" ,blogRouter);
 
 
 app.get('/about', function (req, res) {
-    res.send('<h1>Haqqe Meda</h1>');
+    res.send('<h1>Mustafa Koçoğlu</h1>');
   });
 
 app.get('/pp', function (req, res) {
